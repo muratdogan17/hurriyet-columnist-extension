@@ -1,8 +1,8 @@
-var button = document.getElementById("load-more");
-
-button.addEventListener("click",function () {
-   var newURL = "http://www.hurriyet.com.tr/yazarlar";
-   chrome.tabs.create({ url: newURL });
+$(document).ready(function(){
+   $('body').on('click', 'a', function(){
+      chrome.tabs.create({url: $(this).attr('href')});
+      return false;
+   });
 });
 'use strict';
 
@@ -23,7 +23,6 @@ var AuthorList = React.createClass({
             });
         }).bind(this));
     },
-    getAllAuthors: function getAllAuthors() {},
     componentDidMount: function componentDidMount() {
         this.getInitialData();
     },
@@ -43,7 +42,7 @@ var AuthorList = React.createClass({
                         { className: 'author-name' },
                         React.createElement(
                             'a',
-                            { href: '{author.Url}', className: 'cf' },
+                            { href: author.Url, className: 'cf' },
                             React.createElement(
                                 'h5',
                                 null,
@@ -52,7 +51,7 @@ var AuthorList = React.createClass({
                         ),
                         React.createElement(
                             'a',
-                            { href: '{author.Url}', className: 'cf article-title-wrapper' },
+                            { href: author.Url, className: 'cf article-title-wrapper' },
                             React.createElement(
                                 'h4',
                                 { className: 'article-title' },

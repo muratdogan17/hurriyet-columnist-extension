@@ -14,9 +14,6 @@ let AuthorList = React.createClass({
             });
         }.bind(this));
     },
-    getAllAuthors(){
-
-    },
     componentDidMount(){
         this.getInitialData();
     },
@@ -29,10 +26,10 @@ let AuthorList = React.createClass({
                 <article key={author.Id} className="feed-article  feed-author-article read-list-wrapper">
                     <div className="author-text">
                         <div className="author-name">
-                            <a href="{author.Url}" className="cf">
+                            <a href={author.Url} className="cf">
                                 <h5>{author.Fullname}</h5>
                             </a>
-                            <a href="{author.Url}" className="cf article-title-wrapper">
+                            <a href={author.Url} className="cf article-title-wrapper">
                                 <h4 className="article-title">{author.Description}</h4>
                             </a>
                         </div>
