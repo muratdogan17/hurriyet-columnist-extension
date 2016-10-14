@@ -10,7 +10,9 @@
     "default_popup": "popup.html",
     "default_title": "Hürriyet Yazarlar"
   },
-
+  "icons": {
+    "128": "128png"
+  },
   "background":["assets/js/app.js"],
   "permissions": [
     "activeTab",
