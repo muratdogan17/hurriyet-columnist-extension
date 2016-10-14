@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Hurriyet Columnist Chrome Extension",
-  "description": "This extension shows a list of Hurriyet's columnists",
-  "version": "1.0",
+  "name": "Hürriyet Yazarlar Eklentisi",
+  "description": "Hurriyet.com.tr'ye ait ilk 10 yazarı listeleyen eklenti",
+  "version": "1.1",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -11,7 +11,7 @@
     "default_title": "Hürriyet Yazarlar"
   },
   "icons": {
-    "128": "128png"
+    "128": "128.png"
   },
   "background":["assets/js/app.js"],
   "permissions": [

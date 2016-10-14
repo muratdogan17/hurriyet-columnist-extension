@@ -11,7 +11,7 @@ var AuthorList = React.createClass({
 
     getInitialState: function getInitialState() {
         return {
-            apiUrl: 'https://api.hurriyet.com.tr/v1/columns?$top=5',
+            apiUrl: 'https://api.hurriyet.com.tr/v1/columns?$top=10',
             apiKey: 'fc57b59b2aa84a96a5bd3fc86dd1e3a4',
             data: []
         };
