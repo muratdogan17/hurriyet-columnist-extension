@@ -97,6 +97,7 @@ gulp.task('sass', function() {
     };
 
     let sassOptions = {
+        outputStyle: 'compressed',
         includePaths: [
 
         ]
