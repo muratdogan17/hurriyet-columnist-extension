@@ -38,18 +38,18 @@ let jsFiles = {
 // Copy react.js and react-dom.js to assets/js/src/vendor
 // only if the copy in node_modules is "newer"
 gulp.task('copy-react', function() {
-    return gulp.src('node_modules/react/dist/react.js')
-        .pipe(newer('assets/js/src/vendor/react.js'))
+    return gulp.src('node_modules/react/dist/react.min.js')
+        .pipe(newer('assets/js/src/vendor/react.min.js'))
         .pipe(gulp.dest('assets/js/src/vendor'));
 });
 gulp.task('copy-react-dom', function() {
-    return gulp.src('node_modules/react-dom/dist/react-dom.js')
-        .pipe(newer('assets/js/src/vendor/react-dom.js'))
+    return gulp.src('node_modules/react-dom/dist/react-dom.min.js')
+        .pipe(newer('assets/js/src/vendor/react-dom.min.js'))
         .pipe(gulp.dest('assets/js/src/vendor'));
 });
 gulp.task('copy-jquery', function() {
-    return gulp.src('node_modules/jquery/dist/jquery.js')
-        .pipe(newer('assets/js/src/vendor/jquery.js'))
+    return gulp.src('node_modules/jquery/dist/jquery.min.js')
+        .pipe(newer('assets/js/src/vendor/jquery.min.js'))
         .pipe(gulp.dest('assets/js/src/vendor'));
 });
 
@@ -58,11 +58,11 @@ gulp.task('copy-jquery', function() {
 gulp.task('copy-js-vendor', function() {
     return gulp
         .src([
-            'assets/js/src/vendor/react.js',
-            'assets/js/src/vendor/react-dom.js',
-            'assets/js/src/vendor/jquery.js'
+            'assets/js/src/vendor/react.min.js',
+            'assets/js/src/vendor/react-dom.min.js',
+            'assets/js/src/vendor/jquery.min.js'
         ])
-        .pipe(gulp.dest('assets/js'));
+        .pipe(gulp.dest('build/js'));
 });
 
 
@@ -80,7 +80,7 @@ gulp.task('concat', ['copy-react', 'copy-react-dom'], function() {
         }))
         .pipe(concat('app.js'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('assets/js'));
+        .pipe(gulp.dest('build/js'));
 });
 
 
@@ -108,7 +108,7 @@ gulp.task('sass', function() {
         .pipe(sass(sassOptions))
         .pipe(autoprefixer(autoprefixerOptions))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('build/css'))
         .pipe(filter(filterOptions))
         .pipe(reload(reloadOptions));
 });
